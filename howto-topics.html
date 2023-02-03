@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.2 Creating an overview of topics | VOSviewer: putting research into context</title>
+  <meta name="description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.2 Creating an overview of topics | VOSviewer: putting research into context" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.2 Creating an overview of topics | VOSviewer: putting research into context" />
+  
+  <meta name="twitter:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  
+
+<meta name="author" content="Rutger de Jong, Dennis Bus" />
+
+
+<meta name="date" content="2023-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="installation.html"/>
+<link rel="next" href="howto-paper.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://researchsoftware.pubpub.org/pub/rsdlaunch/release/1">AI in Literature Research Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> VOSviewer Introduction and Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="how-it-works.html"><a href="how-it-works.html"><i class="fa fa-check"></i><b>2.1</b> How it works</a></li>
+<li class="chapter" data-level="2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html"><i class="fa fa-check"></i><b>2.2</b> Who can benefit from VOSviewer?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#principal-investigator"><i class="fa fa-check"></i><b>2.2.1</b> Principal Investigator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#phd"><i class="fa fa-check"></i><b>2.2.2</b> PhD</a></li>
+<li class="chapter" data-level="2.2.3" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#policy-makers"><i class="fa fa-check"></i><b>2.2.3</b> Policy makers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="limitations.html"><a href="limitations.html"><i class="fa fa-check"></i><b>2.3</b> Limitations</a></li>
+<li class="chapter" data-level="2.4" data-path="theory-disclaimer.html"><a href="theory-disclaimer.html"><i class="fa fa-check"></i><b>2.4</b> Disclaimer</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="howto.html"><a href="howto.html"><i class="fa fa-check"></i><b>3</b> How to and use cases (some basic modes of VOS)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
+<li class="chapter" data-level="3.2" data-path="howto-topics.html"><a href="howto-topics.html"><i class="fa fa-check"></i><b>3.2</b> Creating an overview of topics</a></li>
+<li class="chapter" data-level="3.3" data-path="howto-paper.html"><a href="howto-paper.html"><i class="fa fa-check"></i><b>3.3</b> Finding the seminal papers in the field</a></li>
+<li class="chapter" data-level="3.4" data-path="howto-papers2.html"><a href="howto-papers2.html"><i class="fa fa-check"></i><b>3.4</b> Finding seminal papers: beyond Web of Science</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="howto-papers2.html"><a href="howto-papers2.html#using-the-doi-as-base"><i class="fa fa-check"></i><b>3.4.1</b> Using the DOI as base</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="journals.html"><a href="journals.html"><i class="fa fa-check"></i><b>3.5</b> Journal analysis with LENS</a></li>
+<li class="chapter" data-level="3.6" data-path="collab.html"><a href="collab.html"><i class="fa fa-check"></i><b>3.6</b> Collaboration overview (including thesaurus)</a></li>
+<li class="chapter" data-level="3.7" data-path="scoring.html"><a href="scoring.html"><i class="fa fa-check"></i><b>3.7</b> Using scoring and non-scholarly text</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sharing-your-results.html"><a href="sharing-your-results.html"><i class="fa fa-check"></i><b>4</b> Sharing your results</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="sharing-your-results.html"><a href="sharing-your-results.html#basic-information-on-the-analysis"><i class="fa fa-check"></i><b>4.0.1</b> Basic information on the analysis</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-a-visualization-as-image"><i class="fa fa-check"></i><b>4.0.2</b> Sharing a visualization: as image</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-an-interactive-visualization"><i class="fa fa-check"></i><b>4.0.3</b> Sharing an interactive visualization</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sharing-your-results.html"><a href="sharing-your-results.html#explaining-your-visualization"><i class="fa fa-check"></i><b>4.0.4</b> Explaining your visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VOSviewer: putting research into context</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="howto-topics" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Creating an overview of topics<a href="howto-topics.html#howto-topics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>VOSviewer has a text analysis that lets you create topic overviews from a text file, for example of the title and abstract in the search results of a generic query. Let’s assume we look for potatoes, then VOSviewer will extract terms such as the different potato families, pests, genetic modification, et cetera from the overall text. By connecting the documents with the same terms (co-occurrence clustering), it will cluster terms in topics that you will be able to recognize, for example pesticides and food processing.The occurrence and age of the term give us information on the research that has been done into this topic.</p>
+<p>In this case we think it may be interesting to check if there are common topics for which VOSviewer is used a lot. Therefore we do not do a generic search, but use the initial paper on VOSviewer as starting point. Everyone who uses VOSviewer in a publication, has to refer to that specific article. For your own research you may want to do a basic search in Web of Science and then continue with the export in step 5.</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to <a href="https://databases.library.leiden.edu/redirect/990009056650302711">Web of Science</a></p></li>
+<li><p>Make sure the search settings are set to ‘Search in: Web of Science Core Collection’. The Core Collection is slightly smaller than all access to Web of Science, however it is the only collection with all information on article citations and therefore the best one to use for VOSviewer.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/wos-collections.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>We choose ‘Cited References’ and enter the DOI from the article as search term.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/wos-cited-references.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Select the correct article and click ‘See results’. We now have 3.635 citing articles. Once you are doing this for a real research, please write down the number of results and copy the query link for your reference.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/wos-cited-articles.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Click on ‘Export’ and choose ‘Tab Delimited File’. Fill out the tab as follows:</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/wos-export.png" alt="" />
+<p class="caption">img</p>
+</div>
+<blockquote>
+<p><strong><em>TIP:</em></strong> you have to export in sets of 500 articles in this mode. So for this set we need 8 export files. Save the files in their own project directory together with the info on the search query.</p>
+</blockquote>
+<ol start="6" style="list-style-type: decimal">
+<li>Now open VOSViewer, click ‘Create’ and choose ‘Create a map based on text data’.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-text.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Choose ‘Read data from bibliographic database files’ (there are many options here, including the ability to enter a list of doi identifiers and some limited search engine capabilities; in practice the database files created here are the most powerful source).</p></li>
+<li><p>In the next window choose ‘Web of Science’ and select all of our files by clicking the first and last while holding down the shift button. Click next when you are done.</p></li>
+<li><p>Select to use terms from both the title and the abstract. Leave the checkmarks as they are and click next.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-fields.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="10" style="list-style-type: decimal">
+<li>VOSviewer now extracts all terms from the title and abstract. Internally it uses a natural language processing AI to extract noun phrases (combinations of a noun with dependents, for example in ‘medical unit’ ‘medical’ is dependent upon the head noun ‘unit’). Next it will try to combine multiple and single phrases (‘medical units’). This technique only works in English as the algorithm does not know how to deal with other grammar. As it is based on grammar, the AI can’t connect abbreviations to written out terms.</li>
+</ol>
+<p>The next question is about binary counting. This means per document a term will be counted as either in the document or not. As a term may be mentioned a lot in a single document, binary counting is usually the preferred setting.</p>
+<ol start="11" style="list-style-type: decimal">
+<li>The minimum number of occurrences makes the difference between a too detailed map and a map you can use for visualization purposes. You may loose some very specific words, but I try to get the number of results down to 1000-2000. Choose next.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-threshold.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Leave number of terms as is and click next.</p></li>
+<li><p>VOSviewer will now display a list of all terms together with a relevancy ranking.The relevancy ranking tries to find out if a term has a common or specific meaning. It does so by checking the co-occurrence patterns. If a phrase is only mentioned a lot in the introductory part of articles for example, it will be less relevant than a phrase that occurs all over the text. You can choose to leave a word out by unchecking the box if you thing it is of no use.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-relevance.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="14" style="list-style-type: decimal">
+<li>For this quick analysis we simply click finish. We now get our first basic overview of the citing articles.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-overview1.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="15" style="list-style-type: decimal">
+<li>You may notice there are three clusters. Two big ones and one smaller, less defined cluster. To get some insight, we note down the largest keywords from each cluster:</li>
+</ol>
+<p><em>red</em>: approach, process, challenge, context, model, environment, state, systematic literature review – seems to be on applications of the VOSviewer methodology for innovation</p>
+<p><em>green</em>: journal, keyword, country, citation, reference, university – seems to be on the specific use for ranking research(ers) and organizations</p>
+<p><em>blue</em>: originality value, co-citation, bibliographic coupling, bibliometric overview – not so clear cut, likely about research on methodologies for scientrometry.</p>
+<ol start="16" style="list-style-type: decimal">
+<li>Personally I look at the results and think the clustering is a bit off. I can see many terms on environmental issues in the red cluster that may be a cluster on their own. Remember: clustering and visualization is a qualitative and not a quantitave analysis. The choices we have made for including articles, terms, etc. are all shown in the results. To improve my map, I choose to change the clustering so my environmental part is split of. To do this, go to the analysis tab and change the clustering parameters. Here I set resolution from 1 to 1.20 and updated the map.</li>
+</ol>
+<p><img src="_bookdown_files/bookdown-demo_files/png/vos-overview2.png" alt="img" />
+From the map I would now conclude there are four clusters which an expert could describe. I see research on using the VOSviewer methods for literature reviews and overviews for innovation and policies (green), applications for finding models/approaches in mainly the environmental sciences (blue), use in ranking of journals, countries and universities (red) and what looks like basic research for scientometric methods (yellow). In these cases it usually helps to check with an expert in the field.</p>
+<p>In this specific analysis there may be less clear boundaries as we did not start from a general search but from articles referring to VOSviewer.</p>
+<blockquote>
+<p><strong><em>TIP:</em></strong> Sometimes the phrases are hard to read because they are overlapping. This may be solved by changing the display parameters to attraction=1 and repulsion=0</p>
+</blockquote>
+<ol start="17" style="list-style-type: decimal">
+<li>To see what research is hot at the moment, we can use the publication information from our map. Switch to the ‘Overlay visualization’ tab and make sure the scores on the right are set to ‘Avg. pub.’ (meaning average date of publication).</li>
+</ol>
+<p>Below the visualization you will notice a bar with a scale for the average publication year. The size of a phrase is determined by the number of publications, the color is the average age. Thus something that is large and blue, has been researched a lot in the past. You will notice that the pandemic has crept up as relatively new term (yellow) with still a small number of publications judging by the size of the dot: are there chances in this subtopic? Why is there such a large connection to country? (tip: check the term pandemic via a filter in your Web of Science query) Medicine is relatively blue and large, so the use of VOSviewer for rankings in this field may be something that has been researched in-depth already.</p>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-overview3.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="18" style="list-style-type: decimal">
+<li>With a density visualization (last tab) we can find the most important areas of research - at least if those terms are not all from the same papers. In this case VOSviewer seems to be mainly in use for ranking, with another focus point on the strategic – overview - use (concepts, state, approaches, challenges).</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/vos-overview4.png" alt="" />
+<p class="caption">img</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="howto-paper.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Analyses.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

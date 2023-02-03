@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.7 Using scoring and non-scholarly text | VOSviewer: putting research into context</title>
+  <meta name="description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.7 Using scoring and non-scholarly text | VOSviewer: putting research into context" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.7 Using scoring and non-scholarly text | VOSviewer: putting research into context" />
+  
+  <meta name="twitter:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  
+
+<meta name="author" content="Rutger de Jong, Dennis Bus" />
+
+
+<meta name="date" content="2023-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="collab.html"/>
+<link rel="next" href="sharing-your-results.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://researchsoftware.pubpub.org/pub/rsdlaunch/release/1">AI in Literature Research Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> VOSviewer Introduction and Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="how-it-works.html"><a href="how-it-works.html"><i class="fa fa-check"></i><b>2.1</b> How it works</a></li>
+<li class="chapter" data-level="2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html"><i class="fa fa-check"></i><b>2.2</b> Who can benefit from VOSviewer?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#principal-investigator"><i class="fa fa-check"></i><b>2.2.1</b> Principal Investigator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#phd"><i class="fa fa-check"></i><b>2.2.2</b> PhD</a></li>
+<li class="chapter" data-level="2.2.3" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#policy-makers"><i class="fa fa-check"></i><b>2.2.3</b> Policy makers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="limitations.html"><a href="limitations.html"><i class="fa fa-check"></i><b>2.3</b> Limitations</a></li>
+<li class="chapter" data-level="2.4" data-path="theory-disclaimer.html"><a href="theory-disclaimer.html"><i class="fa fa-check"></i><b>2.4</b> Disclaimer</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="howto.html"><a href="howto.html"><i class="fa fa-check"></i><b>3</b> How to and use cases (some basic modes of VOS)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
+<li class="chapter" data-level="3.2" data-path="howto-topics.html"><a href="howto-topics.html"><i class="fa fa-check"></i><b>3.2</b> Creating an overview of topics</a></li>
+<li class="chapter" data-level="3.3" data-path="howto-paper.html"><a href="howto-paper.html"><i class="fa fa-check"></i><b>3.3</b> Finding the seminal papers in the field</a></li>
+<li class="chapter" data-level="3.4" data-path="howto-papers2.html"><a href="howto-papers2.html"><i class="fa fa-check"></i><b>3.4</b> Finding seminal papers: beyond Web of Science</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="howto-papers2.html"><a href="howto-papers2.html#using-the-doi-as-base"><i class="fa fa-check"></i><b>3.4.1</b> Using the DOI as base</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="journals.html"><a href="journals.html"><i class="fa fa-check"></i><b>3.5</b> Journal analysis with LENS</a></li>
+<li class="chapter" data-level="3.6" data-path="collab.html"><a href="collab.html"><i class="fa fa-check"></i><b>3.6</b> Collaboration overview (including thesaurus)</a></li>
+<li class="chapter" data-level="3.7" data-path="scoring.html"><a href="scoring.html"><i class="fa fa-check"></i><b>3.7</b> Using scoring and non-scholarly text</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sharing-your-results.html"><a href="sharing-your-results.html"><i class="fa fa-check"></i><b>4</b> Sharing your results</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="sharing-your-results.html"><a href="sharing-your-results.html#basic-information-on-the-analysis"><i class="fa fa-check"></i><b>4.0.1</b> Basic information on the analysis</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-a-visualization-as-image"><i class="fa fa-check"></i><b>4.0.2</b> Sharing a visualization: as image</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-an-interactive-visualization"><i class="fa fa-check"></i><b>4.0.3</b> Sharing an interactive visualization</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sharing-your-results.html"><a href="sharing-your-results.html#explaining-your-visualization"><i class="fa fa-check"></i><b>4.0.4</b> Explaining your visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VOSviewer: putting research into context</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="scoring" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Using scoring and non-scholarly text<a href="scoring.html#scoring" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The text visualizations in VOSviewer are well worth using in analyses that are not about scholarly literature per se. In fact you can analyze phrases in any text document, as long as the text is presented to VOSviewer in English (the algorithm is only trained in English grammar).</p>
+<p>The use of scoring files makes analysis with VOSviewer much more interesting. For example it allows us to visualize if articles contain a specific word, author or topic and see what effect this has on the mapping. One example where such an analysis may be helpful, is when you doubt the specific scholarly term for a subject (jargon). In multidisciplinary research you may find that the terms are used by different groups. By overlaying the occurrence of this term in combination with other terms, you will find out which one best suits your article.</p>
+<p>In this analysis we chose to start from a different situation in which we analyze news articles written about Leiden University and indexed in Nexis Uni. As these articles are in Dutch we had to translate them to English first with <a href="https://www.deepl.com">DeepL</a>. Next we applied scoring to the different newspapers: does a local newspaper write about different subjects than a national one? Or than a religiuous one?</p>
+<p>For this analysis we have written Python code. The code can be copied by clicking the button at the right top of the code box.</p>
+<ol style="list-style-type: decimal">
+<li>Go to Nexis Uni, change to ‘Advanced Search’ and search for <em>“Universiteit Leiden”</em> . We set the filters to include only the following newspapers: Volkskrant, Trouw, Leidsch Dagblad en Reformatorisch Dagblad for the period 23-08-2017 until 23-08-2022.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/nexis.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>We want to export all articles as full text, preferrably in .rtf as this can be read easily by Python. We can only do this if we break down our search in smaller numbers of articles, as we are allowed to export only the first 1000 results. So filter year by year and export in these subsets by first going to ‘Tijdlijn’ in the left column and then setting the timeline so you will have less than 1000 results.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/nexis2.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Click on the download button at the top (arrow down) and use the settings below. As downloading functions for sets of 100, you have to fill out the field ‘Volledige documenten’ to the document numbers in the set and repeat this action until all documents have been downloaded. Make sure you save all documents in the same directory.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/nexis3.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Next we will write Python code to create text files for VOSviewer to work with. We start with creating the necessary text files and importing the libraries needed to convert the works. There is also some code to make sense of the way in which Nexis Uni describes it’s articles as we need to convert them to something that makes sense to VOSviewer.</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="scoring.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> striprtf.striprtf <span class="im">import</span> rtf_to_text</span>
+<span id="cb5-2"><a href="scoring.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb5-3"><a href="scoring.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb5-4"><a href="scoring.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb5-5"><a href="scoring.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="scoring.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#this file contains the text we want to analyze</span></span>
+<span id="cb5-7"><a href="scoring.html#cb5-7" aria-hidden="true" tabindex="-1"></a>text_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;all_text.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>) </span>
+<span id="cb5-8"><a href="scoring.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="scoring.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#this is our scoring file</span></span>
+<span id="cb5-10"><a href="scoring.html#cb5-10" aria-hidden="true" tabindex="-1"></a>metadata_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;metadata.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>) </span>
+<span id="cb5-11"><a href="scoring.html#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="scoring.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#this function converts the date format in Nexis Uni to normal dates</span></span>
+<span id="cb5-13"><a href="scoring.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_days(date_article, corr_date):</span>
+<span id="cb5-14"><a href="scoring.html#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># translate dutch date into number of days</span></span>
+<span id="cb5-15"><a href="scoring.html#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># dag maand jaar weekdag</span></span>
+<span id="cb5-16"><a href="scoring.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    date_parts <span class="op">=</span> date_article.split(<span class="st">&quot; &quot;</span>)</span>
+<span id="cb5-17"><a href="scoring.html#cb5-17" aria-hidden="true" tabindex="-1"></a>    day, month, year <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb5-18"><a href="scoring.html#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(date_parts)<span class="op">&gt;</span><span class="dv">3</span>:</span>
+<span id="cb5-19"><a href="scoring.html#cb5-19" aria-hidden="true" tabindex="-1"></a>        day <span class="op">=</span> <span class="bu">int</span>(date_parts[<span class="dv">0</span>])</span>
+<span id="cb5-20"><a href="scoring.html#cb5-20" aria-hidden="true" tabindex="-1"></a>        year <span class="op">=</span> <span class="bu">int</span>(date_parts[<span class="dv">2</span>])</span>
+<span id="cb5-21"><a href="scoring.html#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;januari&#39;</span>:</span>
+<span id="cb5-22"><a href="scoring.html#cb5-22" aria-hidden="true" tabindex="-1"></a>            month <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-23"><a href="scoring.html#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;februari&#39;</span>:</span>
+<span id="cb5-24"><a href="scoring.html#cb5-24" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb5-25"><a href="scoring.html#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;maart&#39;</span>:</span>
+<span id="cb5-26"><a href="scoring.html#cb5-26" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb5-27"><a href="scoring.html#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;april&#39;</span>:</span>
+<span id="cb5-28"><a href="scoring.html#cb5-28" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb5-29"><a href="scoring.html#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;mei&#39;</span>:</span>
+<span id="cb5-30"><a href="scoring.html#cb5-30" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb5-31"><a href="scoring.html#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;juni&#39;</span>:</span>
+<span id="cb5-32"><a href="scoring.html#cb5-32" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">6</span></span>
+<span id="cb5-33"><a href="scoring.html#cb5-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;juli&#39;</span>:</span>
+<span id="cb5-34"><a href="scoring.html#cb5-34" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">7</span></span>
+<span id="cb5-35"><a href="scoring.html#cb5-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;augustus&#39;</span>:</span>
+<span id="cb5-36"><a href="scoring.html#cb5-36" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">8</span></span>
+<span id="cb5-37"><a href="scoring.html#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;september&#39;</span>:</span>
+<span id="cb5-38"><a href="scoring.html#cb5-38" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">9</span></span>
+<span id="cb5-39"><a href="scoring.html#cb5-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;oktober&#39;</span>:</span>
+<span id="cb5-40"><a href="scoring.html#cb5-40" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">10</span></span>
+<span id="cb5-41"><a href="scoring.html#cb5-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;november&#39;</span>:</span>
+<span id="cb5-42"><a href="scoring.html#cb5-42" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">11</span></span>
+<span id="cb5-43"><a href="scoring.html#cb5-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> date_parts[<span class="dv">1</span>]<span class="op">==</span><span class="st">&#39;december&#39;</span>:</span>
+<span id="cb5-44"><a href="scoring.html#cb5-44" aria-hidden="true" tabindex="-1"></a>            month<span class="op">=</span><span class="dv">12</span></span>
+<span id="cb5-45"><a href="scoring.html#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-46"><a href="scoring.html#cb5-46" aria-hidden="true" tabindex="-1"></a>    the_date <span class="op">=</span> date(year, month, day)</span>
+<span id="cb5-47"><a href="scoring.html#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (the_date<span class="op">-</span>corr_date).days</span>
+<span id="cb5-48"><a href="scoring.html#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="scoring.html#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="co">#this function removes some common layout words in NexisUni</span></span>
+<span id="cb5-50"><a href="scoring.html#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_common(text_in):</span>
+<span id="cb5-51"><a href="scoring.html#cb5-51" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Pdf&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-52"><a href="scoring.html#cb5-52" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;van dit document&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-53"><a href="scoring.html#cb5-53" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;document load date&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-54"><a href="scoring.html#cb5-54" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;load date&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-55"><a href="scoring.html#cb5-55" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-56"><a href="scoring.html#cb5-56" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Shading&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-57"><a href="scoring.html#cb5-57" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Grid&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-58"><a href="scoring.html#cb5-58" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Accent&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-59"><a href="scoring.html#cb5-59" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Pagina&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-60"><a href="scoring.html#cb5-60" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Light&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-61"><a href="scoring.html#cb5-61" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;List&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-62"><a href="scoring.html#cb5-62" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Colorful&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-63"><a href="scoring.html#cb5-63" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Dark&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-64"><a href="scoring.html#cb5-64" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Subtle&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-65"><a href="scoring.html#cb5-65" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Emphasis&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-66"><a href="scoring.html#cb5-66" aria-hidden="true" tabindex="-1"></a>    text_in <span class="op">=</span> text_in.replace(<span class="st">&quot;Intense&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-67"><a href="scoring.html#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text_in</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>The NexisUni export is quite uniform. We can readout the contents by checking all files in the directory we saved our rtf’s. Each file has metadata describing the article specifically structured (but a bit difficult to read for a script), something you will discover while looking at some examples. The title for example, is always after the url, and after the title we first have the news outlet and then the date. The document text is in between the line ‘Body’ and ‘End of document’.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="scoring.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> article <span class="kw">in</span> os.listdir(<span class="st">&#39;articles_nexisuni&#39;</span>): <span class="co">#read all files in the directory articles_nexisuni</span></span>
+<span id="cb6-2"><a href="scoring.html#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> article[:<span class="dv">2</span>]<span class="op">!=</span><span class="st">&quot;~$&quot;</span>: <span class="co"># skip temporary files.</span></span>
+<span id="cb6-3"><a href="scoring.html#cb6-3" aria-hidden="true" tabindex="-1"></a>        news_article <span class="op">=</span> <span class="bu">open</span>(os.path.join(<span class="st">&#39;articles_nexisuni&#39;</span>, article), <span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb6-4"><a href="scoring.html#cb6-4" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-5"><a href="scoring.html#cb6-5" aria-hidden="true" tabindex="-1"></a>        next_section <span class="op">=</span> <span class="st">&#39; &#39;</span></span>
+<span id="cb6-6"><a href="scoring.html#cb6-6" aria-hidden="true" tabindex="-1"></a>        title <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb6-7"><a href="scoring.html#cb6-7" aria-hidden="true" tabindex="-1"></a>        newspaper <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb6-8"><a href="scoring.html#cb6-8" aria-hidden="true" tabindex="-1"></a>        article_date <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb6-9"><a href="scoring.html#cb6-9" aria-hidden="true" tabindex="-1"></a>        body <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb6-10"><a href="scoring.html#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> news_article.readlines():</span>
+<span id="cb6-11"><a href="scoring.html#cb6-11" aria-hidden="true" tabindex="-1"></a>            i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb6-12"><a href="scoring.html#cb6-12" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span>rtf_to_text(line, <span class="st">&#39;ignore&#39;</span>)</span>
+<span id="cb6-13"><a href="scoring.html#cb6-13" aria-hidden="true" tabindex="-1"></a>            line <span class="op">=</span> line.strip()</span>
+<span id="cb6-14"><a href="scoring.html#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">len</span>(line)<span class="op">&gt;</span><span class="dv">0</span> <span class="kw">and</span> line<span class="op">!=</span><span class="st">&quot;&quot;</span>:</span>
+<span id="cb6-15"><a href="scoring.html#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="scoring.html#cb6-16" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> line[:<span class="dv">6</span>]<span class="op">==</span><span class="st">&quot;https:&quot;</span> <span class="kw">and</span> <span class="bu">len</span>(title)<span class="op">&lt;=</span><span class="dv">0</span>:</span>
+<span id="cb6-17"><a href="scoring.html#cb6-17" aria-hidden="true" tabindex="-1"></a>                    next_section <span class="op">=</span> <span class="st">&#39;title&#39;</span></span>
+<span id="cb6-18"><a href="scoring.html#cb6-18" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> next_section<span class="op">==</span><span class="st">&#39;title&#39;</span>:</span>
+<span id="cb6-19"><a href="scoring.html#cb6-19" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="kw">not</span> (line<span class="op">==</span><span class="st">&quot;de Volkskrant&quot;</span> <span class="kw">or</span> line<span class="op">==</span><span class="st">&#39;Trouw&#39;</span> <span class="kw">or</span> line<span class="op">==</span><span class="st">&#39;Leidsch Dagblad&#39;</span> <span class="kw">or</span> line<span class="op">==</span><span class="st">&quot;Reformatorisch Dagblad&quot;</span>):</span>
+<span id="cb6-20"><a href="scoring.html#cb6-20" aria-hidden="true" tabindex="-1"></a>                        title <span class="op">+=</span> line</span>
+<span id="cb6-21"><a href="scoring.html#cb6-21" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">else</span>:</span>
+<span id="cb6-22"><a href="scoring.html#cb6-22" aria-hidden="true" tabindex="-1"></a>                        newspaper <span class="op">=</span> line</span>
+<span id="cb6-23"><a href="scoring.html#cb6-23" aria-hidden="true" tabindex="-1"></a>                        next_section <span class="op">=</span> <span class="st">&#39;article_date&#39;</span></span>
+<span id="cb6-24"><a href="scoring.html#cb6-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> next_section<span class="op">==</span><span class="st">&#39;article_date&#39;</span>:</span>
+<span id="cb6-25"><a href="scoring.html#cb6-25" aria-hidden="true" tabindex="-1"></a>                    article_date <span class="op">=</span> get_days(line, date(<span class="dv">2017</span>,<span class="dv">8</span>,<span class="dv">23</span>)) <span class="co">#we calculate the number of days since the first publication in our set</span></span>
+<span id="cb6-26"><a href="scoring.html#cb6-26" aria-hidden="true" tabindex="-1"></a>                    next_section <span class="op">=</span> <span class="st">&#39;wait&#39;</span></span>
+<span id="cb6-27"><a href="scoring.html#cb6-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> next_section<span class="op">==</span><span class="st">&#39;wait&#39;</span> <span class="kw">and</span> line[:<span class="dv">4</span>]<span class="op">==</span><span class="st">&quot;Body&quot;</span>:</span>
+<span id="cb6-28"><a href="scoring.html#cb6-28" aria-hidden="true" tabindex="-1"></a>                    next_section <span class="op">=</span> <span class="st">&#39;body&#39;</span></span>
+<span id="cb6-29"><a href="scoring.html#cb6-29" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> next_section<span class="op">==</span><span class="st">&#39;body&#39;</span> <span class="kw">and</span> <span class="kw">not</span> line[:<span class="dv">15</span>]<span class="op">==</span><span class="st">&quot;End of Document&quot;</span>:</span>
+<span id="cb6-30"><a href="scoring.html#cb6-30" aria-hidden="true" tabindex="-1"></a>                    body <span class="op">+=</span> line <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb6-31"><a href="scoring.html#cb6-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">elif</span> next_section<span class="op">==</span><span class="st">&#39;body&#39;</span> <span class="kw">and</span> line[:<span class="dv">15</span>]<span class="op">==</span><span class="st">&quot;End of Document&quot;</span>:</span>
+<span id="cb6-32"><a href="scoring.html#cb6-32" aria-hidden="true" tabindex="-1"></a>                    next_section<span class="op">=</span><span class="st">&#39;end&#39;</span></span>
+<span id="cb6-33"><a href="scoring.html#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="scoring.html#cb6-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">#We have to strip all information from the body</span></span>
+<span id="cb6-35"><a href="scoring.html#cb6-35" aria-hidden="true" tabindex="-1"></a>        pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&#39;[\n\r]+&#39;</span>) <span class="co">#r&#39;[^\w\.,;: ]+&#39;)</span></span>
+<span id="cb6-36"><a href="scoring.html#cb6-36" aria-hidden="true" tabindex="-1"></a>        body <span class="op">=</span> title <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> body</span>
+<span id="cb6-37"><a href="scoring.html#cb6-37" aria-hidden="true" tabindex="-1"></a>        body <span class="op">=</span> re.sub(pattern, <span class="st">&#39; &#39;</span>, body)</span>
+<span id="cb6-38"><a href="scoring.html#cb6-38" aria-hidden="true" tabindex="-1"></a>        body <span class="op">=</span> remove_common(body) <span class="co"># to remove some common nexis uni terms</span></span>
+<span id="cb6-39"><a href="scoring.html#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="scoring.html#cb6-40" aria-hidden="true" tabindex="-1"></a>        text_file.write(body<span class="op">+</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb6-41"><a href="scoring.html#cb6-41" aria-hidden="true" tabindex="-1"></a>        volkskrant, trouw, leidsch_dagblad, reformatorisch_dagblad, voermans <span class="op">=</span> <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span></span>
+<span id="cb6-42"><a href="scoring.html#cb6-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> newspaper <span class="op">==</span><span class="st">&#39;de Volkskrant&#39;</span>:</span>
+<span id="cb6-43"><a href="scoring.html#cb6-43" aria-hidden="true" tabindex="-1"></a>            volkskrant<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb6-44"><a href="scoring.html#cb6-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> newspaper<span class="op">==</span><span class="st">&#39;Trouw&#39;</span>:</span>
+<span id="cb6-45"><a href="scoring.html#cb6-45" aria-hidden="true" tabindex="-1"></a>            trouw<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb6-46"><a href="scoring.html#cb6-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> newspaper<span class="op">==</span><span class="st">&#39;Leidsch Dagblad&#39;</span>:</span>
+<span id="cb6-47"><a href="scoring.html#cb6-47" aria-hidden="true" tabindex="-1"></a>            leidsch_dagblad<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb6-48"><a href="scoring.html#cb6-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> newspaper<span class="op">==</span><span class="st">&#39;Reformatorisch Dagblad&#39;</span>:</span>
+<span id="cb6-49"><a href="scoring.html#cb6-49" aria-hidden="true" tabindex="-1"></a>            reformatorisch_dagblad<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb6-50"><a href="scoring.html#cb6-50" aria-hidden="true" tabindex="-1"></a>        <span class="co"># let&#39;s do an extra check to see if Wim Voermans is involved</span></span>
+<span id="cb6-51"><a href="scoring.html#cb6-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> re.search(<span class="st">&quot;(?i)voermans&quot;</span>, body, re.IGNORECASE):</span>
+<span id="cb6-52"><a href="scoring.html#cb6-52" aria-hidden="true" tabindex="-1"></a>            voermans<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb6-53"><a href="scoring.html#cb6-53" aria-hidden="true" tabindex="-1"></a>        metadata_file.write(<span class="ss">f&#39;</span><span class="ch">\n</span><span class="sc">{</span>article_date<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>volkskrant<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>trouw<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>leidsch_dagblad<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>reformatorisch_dagblad<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>voermans<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb6-54"><a href="scoring.html#cb6-54" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-55"><a href="scoring.html#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co"># next we save and close the files</span></span>
+<span id="cb6-56"><a href="scoring.html#cb6-56" aria-hidden="true" tabindex="-1"></a>metadata_file.close()</span>
+<span id="cb6-57"><a href="scoring.html#cb6-57" aria-hidden="true" tabindex="-1"></a>text_file.close()</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>After the script has worked through all the files, we have a text file (all_text.txt) and a scoring file (metadata.txt). Entering these into VOSviewer would give unusable results as the VOSviewer algorithm can only work with English phrases. Therefore we have to translate the text.</li>
+</ol>
+<p>In theory translation can be done in several ways, for example by using Google Translate API. However, the sheer size of the text (we are indexing fulltext!) means this would cost us upwards of 100 dollars. A cheaper way is to take a test or full subscription to DeepL and convert text files. You can take out a DeepL trial or subscription at <a href="https://www.deepl.com/" class="uri">https://www.deepl.com/</a> (for smaller searches this may work well without subscription). For DeepL the maximum text size is 1 Mb, so our first step is to split the text files:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="scoring.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_into_files(text_size_limit<span class="op">=</span><span class="dv">800000</span>):</span>
+<span id="cb7-2"><a href="scoring.html#cb7-2" aria-hidden="true" tabindex="-1"></a>    text_size_counter <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="scoring.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    file_number <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-4"><a href="scoring.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;all_text.txt&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb7-5"><a href="scoring.html#cb7-5" aria-hidden="true" tabindex="-1"></a>        lines <span class="op">=</span> f.readlines()</span>
+<span id="cb7-6"><a href="scoring.html#cb7-6" aria-hidden="true" tabindex="-1"></a>        current_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;all_text_&quot;</span><span class="op">+</span><span class="bu">str</span>(file_number)<span class="op">+</span><span class="st">&quot;.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb7-7"><a href="scoring.html#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb7-8"><a href="scoring.html#cb7-8" aria-hidden="true" tabindex="-1"></a>            text_size_counter <span class="op">+=</span> <span class="bu">len</span>(line)<span class="op">+</span><span class="dv">2</span> <span class="co">#add linebreaks as character</span></span>
+<span id="cb7-9"><a href="scoring.html#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> text_size_counter <span class="op">&gt;</span> text_size_limit:</span>
+<span id="cb7-10"><a href="scoring.html#cb7-10" aria-hidden="true" tabindex="-1"></a>                current_file.close()</span>
+<span id="cb7-11"><a href="scoring.html#cb7-11" aria-hidden="true" tabindex="-1"></a>                file_number <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href="scoring.html#cb7-12" aria-hidden="true" tabindex="-1"></a>                current_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;all_text_&quot;</span><span class="op">+</span><span class="bu">str</span>(file_number)<span class="op">+</span><span class="st">&quot;.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb7-13"><a href="scoring.html#cb7-13" aria-hidden="true" tabindex="-1"></a>                text_size_counter <span class="op">=</span> <span class="bu">len</span>(line)<span class="op">+</span><span class="dv">2</span></span>
+<span id="cb7-14"><a href="scoring.html#cb7-14" aria-hidden="true" tabindex="-1"></a>            current_file.write(line)</span>
+<span id="cb7-15"><a href="scoring.html#cb7-15" aria-hidden="true" tabindex="-1"></a>        current_file.close()</span>
+<span id="cb7-16"><a href="scoring.html#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="scoring.html#cb7-17" aria-hidden="true" tabindex="-1"></a>split_into_files()</span></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li>The split files can be uploaded to DeepL and after that we can stitch the results back to one big file (be sure to keep the same order of the files, otherwise the scoring file will be off). We can do this with the following script:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="scoring.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> combine_files(name<span class="op">=</span><span class="st">&quot;all_text_&quot;</span>):</span>
+<span id="cb8-2"><a href="scoring.html#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># walk the os_path</span></span>
+<span id="cb8-3"><a href="scoring.html#cb8-3" aria-hidden="true" tabindex="-1"></a>    file_names_found <span class="op">=</span> {}</span>
+<span id="cb8-4"><a href="scoring.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    full_translation <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;all_text_translated.txt&quot;</span>, <span class="st">&quot;w+&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb8-5"><a href="scoring.html#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> os.listdir():</span>
+<span id="cb8-6"><a href="scoring.html#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(x)</span>
+<span id="cb8-7"><a href="scoring.html#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x.find(name) <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb8-8"><a href="scoring.html#cb8-8" aria-hidden="true" tabindex="-1"></a>            pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">&#39;_([0-9]+) &#39;</span>)</span>
+<span id="cb8-9"><a href="scoring.html#cb8-9" aria-hidden="true" tabindex="-1"></a>            pos <span class="op">=</span> pattern.search(x)</span>
+<span id="cb8-10"><a href="scoring.html#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> pos:</span>
+<span id="cb8-11"><a href="scoring.html#cb8-11" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">&quot;pos: &quot;</span><span class="op">+</span> pos.group(<span class="dv">1</span>))</span>
+<span id="cb8-12"><a href="scoring.html#cb8-12" aria-hidden="true" tabindex="-1"></a>                file_names_found[<span class="bu">int</span>(pos.group(<span class="dv">1</span>))] <span class="op">=</span> x</span>
+<span id="cb8-13"><a href="scoring.html#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># start retrieving files</span></span>
+<span id="cb8-14"><a href="scoring.html#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(file_names_found)):</span>
+<span id="cb8-15"><a href="scoring.html#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(file_names_found[i], encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb8-16"><a href="scoring.html#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> line <span class="kw">in</span> f.readlines():</span>
+<span id="cb8-17"><a href="scoring.html#cb8-17" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> line.strip() <span class="op">!=</span> <span class="st">&quot;&quot;</span>: <span class="co">#remove empty last lines</span></span>
+<span id="cb8-18"><a href="scoring.html#cb8-18" aria-hidden="true" tabindex="-1"></a>                    full_translation.write(line)</span>
+<span id="cb8-19"><a href="scoring.html#cb8-19" aria-hidden="true" tabindex="-1"></a>            f.close()</span>
+<span id="cb8-20"><a href="scoring.html#cb8-20" aria-hidden="true" tabindex="-1"></a>    full_translation.close()</span>
+<span id="cb8-21"><a href="scoring.html#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="scoring.html#cb8-22" aria-hidden="true" tabindex="-1"></a>combine_files()</span></code></pre></div>
+<ol start="8" style="list-style-type: decimal">
+<li>Now we can use VOSviewer to create a plot with multiple overlays. Choose ‘Create’-&gt;‘Create a map based on text data’-&gt;‘Read data from Vos Viewer files’. Use the first file box for the text file and the second one for the scoring file.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap1.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="9" style="list-style-type: decimal">
+<li><p>In the next window we choose binary counting. In this case we don’t use a thesaurus, but if you want to ensure that certain synonyms are grouped together, you can use a thesaurus.</p></li>
+<li><p>When asked for a minimum number of terms I usually select to keep around the 1000-2000 results. In this case this means a term should occur at least 24 times. Next we finish and create our map.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap2.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="11" style="list-style-type: decimal">
+<li>Looking at our map, I get the idea that some clusters are overlapping too much. In red, for example, I see both students and political parties mentioned. Therefore it may be better to increase the resolution and create more clusters. To do this I have entered 1.2 in the box for resolution (Analysis tab on the left side, see Clustering). Press ‘Update clustering’ to create the new visualization.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap3.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="12" style="list-style-type: decimal">
+<li>The clusters are know separated in a more meaningful way. A quick look clockwise:</li>
+</ol>
+<ul>
+<li>blue (board, student, spokesperson, Leiden) seems to be about university affairs</li>
+<li>red (science, space, technology, computer, data) about scholarly output in the exact sciences</li>
+<li>green (Century, church, art, museum, visitor) this may well be connected to the Leiden past as we have had an anniversary during the analysis.</li>
+<li>yellow (Europe, leader, war, Russia) about international affairs</li>
+<li>orange (police, security, victim, court) about justice</li>
+<li>purple (government, party, citizen, politician) about politics</li>
+<li>light blue in the middle about family affairs/people</li>
+</ul>
+<ol start="13" style="list-style-type: decimal">
+<li>Now we go to the tab ’Overlay visualization’at the top of VOSviewer. On the right we can choose what visualization we want. By default it uses the first score, in our case number of days since the start of the newsline. Under scores you can select the scoring you want to use, fo example our news source Volkskrant.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap4.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="14" style="list-style-type: decimal">
+<li>Let’s switch to the scoring for ‘Wim Voermans’. Voermans is a well know Leiden professor of consitutional and administrative law. He is regularly asked for comments on state affairs, for example during the elections or for the nitrogen emission rights that have a large impact on the functioning of our government. The visualization reflects this. These topics (cabinet, council, debate, nitrogen) are yellow in the visualization (often occur in combination with Wim Voermans as you can see in the scale at the bottom). The size of the dot of each cluster, is an indication whether the topic is mentioned a lot within all documents.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap5.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="15" style="list-style-type: decimal">
+<li>For the newspapers ‘Trouw’, ‘De Volkskrant’, ‘Leidsch Dagblad’ and ‘Reformatorisch Dagblad’. These newspapers have been selected as they all have a different profile. The visualization gives information on how they differ from the average.</li>
+</ol>
+<ul>
+<li><strong>Leidsch Dagblad</strong> is a local newspaper. In the visualization we can see it focuses (yellow). You can see it overlaps mainly with the university affairs cluster with words like campus being mentioned a lot) we saw earlier. There is not that much focus on the other topics such as science or state affairs.
+If we hover over the word ‘campus’ you will see a score in the bottom bar for Leidsch Dagblad of 0.74. This means that for the 86 occurrences of ‘campus’ in the set, 74 per cent - 64 - times it was in Leidsch Dagblad. So even though the number of occurrences is relatively small, the use of the term is quite unique for Leidsch Dagblad thus it has a specific focus here. (If all newspapers found it of equal interest, it would have been around 0.2-0.3 and blue)</li>
+</ul>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap6.png" alt="" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap7.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ul>
+<li><strong>De Volkskrant</strong> is a big national newspaper, a bit elitist and it is well known for politics and science reporting. You can immediately see that within this set Volkskrant is dominant in reporting about our observatory, while the university affairs are less important. (Be aware that Leidsch Dagblad has a dominance in university affairs, but even then, Volkskrant scores 0.13 while we expected 0.25 according to the table below).</li>
+</ul>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap8.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ul>
+<li><strong>Trouw</strong> is a modern christian newspaper well known for reporting science and high quality journalism. It’s a bit of a generalist in this set. It’s not doing that well in astronomy which is a subject that may question belief. Within the set its focus is slightly more towards politics, security and international relations.</li>
+</ul>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap9.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ul>
+<li><strong>Reformatorisch Dagblad</strong> is a very traditional christian newspaper. Judging by the scale, it is pretty average in most subjects. Within the set it has a focus on for example words such as god (0.42) and church (0.39). This is remarkable as the number of articles from this source is lower than from the other sources.</li>
+</ul>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/textmap10.png" alt="" />
+<p class="caption">img</p>
+</div>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="48%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Source </strong></th>
+<th><strong># documents</strong></th>
+<th><strong>Average</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>De Volkskrant</td>
+<td>794</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td>Leidsch Dagblad</td>
+<td>1637</td>
+<td>0.49</td>
+</tr>
+<tr class="odd">
+<td>Reformatorisch Dagblad</td>
+<td>321</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td>Trouw</td>
+<td>589</td>
+<td>0.18</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="collab.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sharing-your-results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Analyses.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.6 Collaboration overview (including thesaurus) | VOSviewer: putting research into context</title>
+  <meta name="description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.6 Collaboration overview (including thesaurus) | VOSviewer: putting research into context" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.6 Collaboration overview (including thesaurus) | VOSviewer: putting research into context" />
+  
+  <meta name="twitter:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  
+
+<meta name="author" content="Rutger de Jong, Dennis Bus" />
+
+
+<meta name="date" content="2023-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="journals.html"/>
+<link rel="next" href="scoring.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://researchsoftware.pubpub.org/pub/rsdlaunch/release/1">AI in Literature Research Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> VOSviewer Introduction and Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="how-it-works.html"><a href="how-it-works.html"><i class="fa fa-check"></i><b>2.1</b> How it works</a></li>
+<li class="chapter" data-level="2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html"><i class="fa fa-check"></i><b>2.2</b> Who can benefit from VOSviewer?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#principal-investigator"><i class="fa fa-check"></i><b>2.2.1</b> Principal Investigator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#phd"><i class="fa fa-check"></i><b>2.2.2</b> PhD</a></li>
+<li class="chapter" data-level="2.2.3" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#policy-makers"><i class="fa fa-check"></i><b>2.2.3</b> Policy makers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="limitations.html"><a href="limitations.html"><i class="fa fa-check"></i><b>2.3</b> Limitations</a></li>
+<li class="chapter" data-level="2.4" data-path="theory-disclaimer.html"><a href="theory-disclaimer.html"><i class="fa fa-check"></i><b>2.4</b> Disclaimer</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="howto.html"><a href="howto.html"><i class="fa fa-check"></i><b>3</b> How to and use cases (some basic modes of VOS)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
+<li class="chapter" data-level="3.2" data-path="howto-topics.html"><a href="howto-topics.html"><i class="fa fa-check"></i><b>3.2</b> Creating an overview of topics</a></li>
+<li class="chapter" data-level="3.3" data-path="howto-paper.html"><a href="howto-paper.html"><i class="fa fa-check"></i><b>3.3</b> Finding the seminal papers in the field</a></li>
+<li class="chapter" data-level="3.4" data-path="howto-papers2.html"><a href="howto-papers2.html"><i class="fa fa-check"></i><b>3.4</b> Finding seminal papers: beyond Web of Science</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="howto-papers2.html"><a href="howto-papers2.html#using-the-doi-as-base"><i class="fa fa-check"></i><b>3.4.1</b> Using the DOI as base</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="journals.html"><a href="journals.html"><i class="fa fa-check"></i><b>3.5</b> Journal analysis with LENS</a></li>
+<li class="chapter" data-level="3.6" data-path="collab.html"><a href="collab.html"><i class="fa fa-check"></i><b>3.6</b> Collaboration overview (including thesaurus)</a></li>
+<li class="chapter" data-level="3.7" data-path="scoring.html"><a href="scoring.html"><i class="fa fa-check"></i><b>3.7</b> Using scoring and non-scholarly text</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sharing-your-results.html"><a href="sharing-your-results.html"><i class="fa fa-check"></i><b>4</b> Sharing your results</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="sharing-your-results.html"><a href="sharing-your-results.html#basic-information-on-the-analysis"><i class="fa fa-check"></i><b>4.0.1</b> Basic information on the analysis</a></li>
+<li class="chapter" data-level="4.0.2" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-a-visualization-as-image"><i class="fa fa-check"></i><b>4.0.2</b> Sharing a visualization: as image</a></li>
+<li class="chapter" data-level="4.0.3" data-path="sharing-your-results.html"><a href="sharing-your-results.html#sharing-an-interactive-visualization"><i class="fa fa-check"></i><b>4.0.3</b> Sharing an interactive visualization</a></li>
+<li class="chapter" data-level="4.0.4" data-path="sharing-your-results.html"><a href="sharing-your-results.html#explaining-your-visualization"><i class="fa fa-check"></i><b>4.0.4</b> Explaining your visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VOSviewer: putting research into context</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="collab" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Collaboration overview (including thesaurus)<a href="collab.html#collab" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Creating overviews with the Author as linking pin can be beneficial for several reasons. For researchers it may help find colleagues to collaborate with as they are already doing similar research or get people that may introduce you through their network. Especially when you need to tender for a large grant, this can be really helpful (note: you can also use the affiliation as base to find where the research is done). For policy makers this analysis may help in visualizing collaborations within and outside of your institution, as these collaborations are often described in multi year plans.</p>
+<p>For this analysis we will be looking at internal collaborations within Leiden University. As we start from journal articles, where authors from multiple universities may have contributed, we need to do some additional steps with the data from Web of Science to exclude the non-Leiden authors. For this we use a Python script. If you want to follow along, you can copy the code at the top right of the code box.</p>
+<p>We also use a thesaurus in this chapter. With a thesaurus you can tell VOSviewer that some terms are similar (or in our case authors) so they will be analysed as one.</p>
+<p><strong>This chapter contains some advanced techniques such as the thesaurus and working with Web of Science data in Python. Those parts can be skipped if you just want to know about creating basic overviews</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>We start by downloading all Leiden University articles in the last 5 years from Web of Science. For this go to Web of Science, as filter choose ‘Affiliation’ with ‘LEIDEN UNIVERSITY’ as value. Set the time range to last 5 years.</p></li>
+<li><p>Export the records as tab delimited files (500 at a time) and save these files to a new directory.</p></li>
+<li><p>We will now create a Python script to filter out the non-Leiden authors. At the top of our Python file we will import the Python libraries needed to do the transformation:</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="collab.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co">#for working with the data in our tab delimited files</span></span>
+<span id="cb1-2"><a href="collab.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os <span class="co">#for accessing the data files</span></span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>The first step is to load all data from the exported files into the Pandas framework:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="collab.html#cb2-1" aria-hidden="true" tabindex="-1"></a>frames <span class="op">=</span> []</span>
+<span id="cb2-2"><a href="collab.html#cb2-2" aria-hidden="true" tabindex="-1"></a>file_dir <span class="op">=</span> <span class="st">&#39;leiden_university&#39;</span> <span class="co">#choose the directory where the exports are in, relative to your Python file</span></span>
+<span id="cb2-3"><a href="collab.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="collab.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> os.listdir(file_dir):</span>
+<span id="cb2-5"><a href="collab.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    frames.append(pd.read_csv(file_dir <span class="op">+</span><span class="st">&quot;/&quot;</span><span class="op">+</span> filename, sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, header<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb2-6"><a href="collab.html#cb2-6" aria-hidden="true" tabindex="-1"></a>all_articles <span class="op">=</span> pd.concat(frames, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>We know all of our affiliation information is in a column called ‘C1’ (example: [Zananiri, Sary] Leiden Univ, LUCL, Leiden, Netherlands; [Zananiri, Sary] Leiden Univ, NINO, Leiden, Netherlands), while the authors are in a column called AU (example: Zananiri, S) and AF (example: Zananiry, Sary). Let’s process the columns based on the information in C1, and take as premisse that all affiliations containing ‘leiden’ are ok (technically this may include a very minor number of authors from companies based in Leiden, but affiliation information can be quite difficult as affiliations noted as Sterrewacht Leiden also mean the university).</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="collab.html#cb3-1" aria-hidden="true" tabindex="-1"></a>authors <span class="op">=</span> [] <span class="co">#to keep track of all different authors</span></span>
+<span id="cb3-2"><a href="collab.html#cb3-2" aria-hidden="true" tabindex="-1"></a>all_articles <span class="op">=</span> all_articles.reset_index()</span>
+<span id="cb3-3"><a href="collab.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind, row <span class="kw">in</span> all_articles.iterrows():</span>
+<span id="cb3-4"><a href="collab.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    line <span class="op">=</span> row[<span class="st">&#39;C1&#39;</span>]</span>
+<span id="cb3-5"><a href="collab.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    institution_lines <span class="op">=</span> line.split(<span class="st">&quot;[&quot;</span>)</span>
+<span id="cb3-6"><a href="collab.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    author_initials <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-7"><a href="collab.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    author_full <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-8"><a href="collab.html#cb3-8" aria-hidden="true" tabindex="-1"></a>    institution_aff <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-9"><a href="collab.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> institution_line <span class="kw">in</span> institution_lines:</span>
+<span id="cb3-10"><a href="collab.html#cb3-10" aria-hidden="true" tabindex="-1"></a>        line_parts <span class="op">=</span> institution_line.split(<span class="st">&quot;]&quot;</span>)</span>
+<span id="cb3-11"><a href="collab.html#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(line_parts)<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb3-12"><a href="collab.html#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> line_parts[<span class="dv">1</span>].lower().find(<span class="st">&#39;leiden&#39;</span>)<span class="op">&gt;=</span><span class="dv">0</span>: <span class="co"># we consider it internal</span></span>
+<span id="cb3-13"><a href="collab.html#cb3-13" aria-hidden="true" tabindex="-1"></a>                names <span class="op">=</span> line_parts[<span class="dv">0</span>].split(<span class="st">&quot;;&quot;</span>)</span>
+<span id="cb3-14"><a href="collab.html#cb3-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb3-15"><a href="collab.html#cb3-15" aria-hidden="true" tabindex="-1"></a>                    name_parts <span class="op">=</span> name.split(<span class="st">&quot;,&quot;</span>)</span>
+<span id="cb3-16"><a href="collab.html#cb3-16" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="bu">len</span>(name_parts)<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb3-17"><a href="collab.html#cb3-17" aria-hidden="true" tabindex="-1"></a>                        first_name <span class="op">=</span> name_parts[<span class="dv">1</span>]</span>
+<span id="cb3-18"><a href="collab.html#cb3-18" aria-hidden="true" tabindex="-1"></a>                        last_name <span class="op">=</span> name_parts[<span class="dv">0</span>]</span>
+<span id="cb3-19"><a href="collab.html#cb3-19" aria-hidden="true" tabindex="-1"></a>                        initials <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-20"><a href="collab.html#cb3-20" aria-hidden="true" tabindex="-1"></a>                        init_parts <span class="op">=</span> name_parts[<span class="dv">1</span>].split(<span class="st">&quot; &quot;</span>)</span>
+<span id="cb3-21"><a href="collab.html#cb3-21" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">for</span> init_part <span class="kw">in</span> init_parts:</span>
+<span id="cb3-22"><a href="collab.html#cb3-22" aria-hidden="true" tabindex="-1"></a>                            initials <span class="op">=</span> initials <span class="op">+</span> init_part[:<span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;.&quot;</span></span>
+<span id="cb3-23"><a href="collab.html#cb3-23" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> <span class="bu">len</span>(author_full)<span class="op">==</span><span class="dv">0</span>:</span>
+<span id="cb3-24"><a href="collab.html#cb3-24" aria-hidden="true" tabindex="-1"></a>                            author_full <span class="op">=</span> last_name <span class="op">+</span><span class="st">&quot;, &quot;</span><span class="op">+</span>first_name</span>
+<span id="cb3-25"><a href="collab.html#cb3-25" aria-hidden="true" tabindex="-1"></a>                            author_initials <span class="op">=</span> last_name <span class="op">+</span> <span class="st">&quot;, &quot;</span> <span class="op">+</span> initials</span>
+<span id="cb3-26"><a href="collab.html#cb3-26" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">else</span>:</span>
+<span id="cb3-27"><a href="collab.html#cb3-27" aria-hidden="true" tabindex="-1"></a>                            author_full <span class="op">=</span> author_full <span class="op">+</span> <span class="st">&quot;; &quot;</span> <span class="op">+</span> last_name <span class="op">+</span><span class="st">&quot;, &quot;</span><span class="op">+</span>first_name</span>
+<span id="cb3-28"><a href="collab.html#cb3-28" aria-hidden="true" tabindex="-1"></a>                            author_initials <span class="op">=</span> author_initials <span class="op">+</span> <span class="st">&quot;; &quot;</span> <span class="op">+</span> last_name <span class="op">+</span> <span class="st">&quot;, &quot;</span> <span class="op">+</span> initials</span>
+<span id="cb3-29"><a href="collab.html#cb3-29" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> (last_name<span class="op">+</span><span class="st">&quot;, &quot;</span><span class="op">+</span>first_name).strip() <span class="kw">not</span> <span class="kw">in</span> authors:</span>
+<span id="cb3-30"><a href="collab.html#cb3-30" aria-hidden="true" tabindex="-1"></a>                            authors.append((last_name<span class="op">+</span><span class="st">&quot;, &quot;</span><span class="op">+</span>first_name).strip())</span>
+<span id="cb3-31"><a href="collab.html#cb3-31" aria-hidden="true" tabindex="-1"></a>    all_articles.loc[ind, <span class="st">&quot;AF&quot;</span>] <span class="op">=</span> author_full.strip()</span>
+<span id="cb3-32"><a href="collab.html#cb3-32" aria-hidden="true" tabindex="-1"></a>    all_articles.loc[ind, <span class="st">&quot;AU&quot;</span>] <span class="op">=</span> author_initials.strip()</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Next we have to bring the authors back into a table that VOSviewer can work with. Therefore we will create a tab delimited text file and we will also create a thesaurus of authors to use later on.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="collab.html#cb4-1" aria-hidden="true" tabindex="-1"></a>all_articles.to_csv(<span class="st">&#39;leiden_only.txt&#39;</span>, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</span>
+<span id="cb4-2"><a href="collab.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;leiden_thesaurus.txt&#39;</span>, <span class="st">&#39;w+&#39;</span>)</span>
+<span id="cb4-3"><a href="collab.html#cb4-3" aria-hidden="true" tabindex="-1"></a>content <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>.join(authors)</span>
+<span id="cb4-4"><a href="collab.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(content)</span>
+<span id="cb4-5"><a href="collab.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li>Next step is to create our thesaurus. Open the file ‘leiden_thesaurus.txt’ in Excel. Add a row to the top and enter the following column names: ‘Label’ in the first cell and ‘Replace by’ in the second. Next we will make a table by selecting all text and choosing ‘Table’ from the ‘Insert’ ribbon.</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/thesaurus.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="8" style="list-style-type: decimal">
+<li>Sort the labels from A-Z and check if you see double entries. We will put the value we want in their ‘Replace by’ column. Be sure to also check out the names with middle names (either before the last or after the first name).</li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/thesaurus2.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="9" style="list-style-type: decimal">
+<li><p>By looking at the table you most likely have noted how many names are spelled in several ways. A good indication is the number of authors mentioned in the file (almost 8 thousand), which is larger than the number of researchers we have. Difficult names such as Simon F. Portegies Zwart (double last name!) will also throw Web of Science. You will also notice there is a big problem with names that only have initials in the full name field. We might say it is easier to choose names with initials, but that strategy is more error prone once you have common names such as the Chinese Wang or Dutch De Jong.</p></li>
+<li><p>Next we filter the ‘Replace by’ column on A-Z and delete the names at the bottom we don’t replace. This is necessary to prevent them being replaced with a blank. NOTE: For the example I did not do all names due to time constraints, but see file leiden_thesaurus_replace.txt for the output I used.</p></li>
+<li><p>Export the file via ‘File’-&gt;‘Export’-&gt;‘Change File Type’-&gt;‘Text (tab delimited)’</p></li>
+<li><p>Create a new map in VOS Viewer. Base on ‘Create a map based on bibliographic data’ -&gt; ‘Read data from bibliographic database files’ go to tab ‘Web of Science’ and choose the leiden_only.txt file. Choose the ‘Co-authorship’ map based on ‘Authors’ and use our thesaurus file.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/thesaurus3.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Choose the number of documents, this may be a bit lower, as many authors will most likely drop from the list for lack of internal collaboration.</p></li>
+<li><p>e now have a very colored map with many small clusters. If you study them closely, each cluster will most likely be a research group. You may notice that some clusters from the same institute do not connect much with others (for this year): for example if I look at the chemistry institute, I see little connection between Herman Overkleeft and Sylvestre Bonnet. But Bonnet does have a strong connection with Louise van der Weerd who works on MRI and imaging techniques at LUMC. This is because Bonnet is an inorganic catalyst expert and uses techniques quite different from that of bio-organic synthesis expert Herman Overkleeft.</p></li>
+</ol>
+<div class="figure">
+<img src="_bookdown_files/bookdown-demo_files/png/thesaurus4.png" alt="" />
+<p class="caption">img</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="journals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="scoring.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Analyses.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

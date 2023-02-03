@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.5 Journal analysis with LENS | VOSviewer: putting research into context</title>
+  <meta name="description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.5 Journal analysis with LENS | VOSviewer: putting research into context" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.5 Journal analysis with LENS | VOSviewer: putting research into context" />
+  
+  <meta name="twitter:description" content="This is a short guide on the usage of VOSviewer. The information and examples are part of a series on using artificial intelligence (AI) for literature research." />
+  
+
+<meta name="author" content="Rutger de Jong, Dennis Bus" />
+
+
+<meta name="date" content="2023-01-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="howto-papers2.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://researchsoftware.pubpub.org/pub/rsdlaunch/release/1">AI in Literature Research Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="theory.html"><a href="theory.html"><i class="fa fa-check"></i><b>2</b> VOSviewer Introduction and Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="how-it-works.html"><a href="how-it-works.html"><i class="fa fa-check"></i><b>2.1</b> How it works</a></li>
+<li class="chapter" data-level="2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html"><i class="fa fa-check"></i><b>2.2</b> Who can benefit from VOSviewer?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#principal-investigator"><i class="fa fa-check"></i><b>2.2.1</b> Principal Investigator</a></li>
+<li class="chapter" data-level="2.2.2" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#phd"><i class="fa fa-check"></i><b>2.2.2</b> PhD</a></li>
+<li class="chapter" data-level="2.2.3" data-path="who-can-benefit-from-vosviewer.html"><a href="who-can-benefit-from-vosviewer.html#policy-makers"><i class="fa fa-check"></i><b>2.2.3</b> Policy makers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="limitations.html"><a href="limitations.html"><i class="fa fa-check"></i><b>2.3</b> Limitations</a></li>
+<li class="chapter" data-level="2.4" data-path="theory-disclaimer.html"><a href="theory-disclaimer.html"><i class="fa fa-check"></i><b>2.4</b> Disclaimer</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="howto.html"><a href="howto.html"><i class="fa fa-check"></i><b>3</b> How to and use cases (some basic modes of VOS)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
+<li class="chapter" data-level="3.2" data-path="howto-topics.html"><a href="howto-topics.html"><i class="fa fa-check"></i><b>3.2</b> Creating an overview of topics</a></li>
+<li class="chapter" data-level="3.3" data-path="howto-paper.html"><a href="howto-paper.html"><i class="fa fa-check"></i><b>3.3</b> Finding the seminal papers in the field</a></li>
+<li class="chapter" data-level="3.4" data-path="howto-papers2.html"><a href="howto-papers2.html"><i class="fa fa-check"></i><b>3.4</b> Finding seminal papers: beyond Web of Science</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="howto-papers2.html"><a href="howto-papers2.html#using-the-doi-as-base"><i class="fa fa-check"></i><b>3.4.1</b> Using the DOI as base</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="journal-analysis-with-lens.html"><a href="journal-analysis-with-lens.html"><i class="fa fa-check"></i><b>3.5</b> Journal analysis with LENS</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="math-example.html"><a href="math-example.html"><i class="fa fa-check"></i><b>4.1</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">VOSviewer: putting research into context</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="journal-analysis-with-lens" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Journal analysis with LENS<a href="journal-analysis-with-lens.html#journal-analysis-with-lens" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A popular use for VOSviewer is using it to find the best possible journals to publish your research or journals you might want to follow to keep up with the field. If you have a specific topic, it may not always be clear what journal best suits your research. Sending it to the wrong journal might give you a rejection note that your research does not fit the journal profile or - if they do accept - might not lead to the visibility within the research community you hoped for. A <strong>Nature</strong> editor once warned us that publishing in their journal might be bad if you have something that is of limited interest to the wider community as it might be seen as to experimental or even completely overlooked by peers.</p>
+<p>In this tutorial we have chosen to find out what journals might be of interest for industrial ecology, a subfield of the environmental sciences. As environmental sciences are relatively new and multidisciplinary, journals from this field may not all be available in Web of Science. This is why we use an alternate scholarly database that indexes a broader collection of journals: <a href="https://www.lens.org">LENS</a>. LENS is a vary capable database as it indexes a large amount of scholarly works fulltext and uses artificial intelligence (formerly integrated in Microsoft Academic) to complement the information with document type, topic, et cetera.</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://www.lens.org" class="uri">https://www.lens.org</a> and choose for searching within scholarly works. As keywords we use <em>“circular econom*” OR “industrial ecology” OR “life cycle anal*”</em> which gives us around 15k results. As Document Type we select ‘Journal Article’ from the left menu, leaving us with around 12k articles.</li>
+</ol>
+<div class="figure">
+<img src="./_bookdown_files/bookdown-demo_files/png/lens0.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>To export all results, we need to create an account at LENS. If you limit the search by specifying (topic, a more strict keyword, time range) you can export 1,000 items without account.</p></li>
+<li><p>With the account I have exported all data as CSV. To do so, go to the small ‘Export button’ underneath the top navigation bar that says ‘Scholarly Works’ (this database has so many options that it may be hard to find). As parameters you can use something like the screenshot:</p></li>
+</ol>
+<div class="figure">
+<img src="./_bookdown_files/bookdown-demo_files/png/lens.png" alt="" />
+<p class="caption">img</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li><p>If there is a large number of articles, LENS will send you an email to download the CSV. This usually takes just a few minutes.</p></li>
+<li><p>Go to VOSviewer and choose Create -&gt; ‘Create a map based on bibliographic data’. In the next screen choose ‘Read data from bibliographic database files, select the tab ’Lens’ and use your downloaded CSV.</p></li>
+<li><p>In the next screen we choose to analyze by Citations and Sources (in our case journals as we have articles published in journals). This way we will see connections between the journals.
+<img src="./_bookdown_files/bookdown-demo_files/png/lens2.png" alt="img" /></p></li>
+<li><p>The next screen asks us how many documents should be minimally in each source. We leave it at 5 for now to give a broad spectrum, but for a large set you can increase this number as you see fit. Click finish to create the visualization.</p></li>
+<li><p>You will now see a map that is dominated by two large journals containing many articles in the field: ‘Russian journal of occupational health and industrial ecology’ and the ‘Journal of industrial ecology’. This is to be expected as we are searching all fields: all articles from journals with ‘industrial ecology’ in the name will be in our search. If this proofs problematic for your search, limit the search to title and abstract or similar fields. Zooming in gives us a much better overview with quite a lot of specific clusters due to the generic keywords we used.</p></li>
+<li><p>Have a look at the items in the left bar to see what clusters there are. Some noteworthy are:</p></li>
+</ol>
+<ul>
+<li>brown with the ‘Russian journal of occupational health and industrial ecology’, which seems to be mainly about radiation and nuclear aspects.</li>
+<li>blue with the ‘Journal of industrial ecology’ which seems to have a clear focus on general aspects, business and economics. This seems to be in accordance to the journals own words: ‘publishes sustainability and circular economy research which considers the relationship between the environment and the socio-economic system’.</li>
+<li>red, which is highly focused on chemical aspects and includes journals about catalysis.
+Hovering over a specific journal will give you citation links between the clusters (both ways). Thus you will notice that for example the communication between the socio-economic cluster in blue to the red chemistry cluster is very little. While the red cluster does cite a lot with clusters about production or health hazards. Considering these aspects might help you find the right cluster for your specific article.</li>
+</ul>
+<p><img src="./_bookdown_files/bookdown-demo_files/png/vosviewer_chemistry.png" alt="img" />
+10. Once you have an idea of where to find your journal within the clusters, it is time to focus on which journal might be the fit for you. Go to the tab ‘Overlay visualization’ in VOSviewer. With the average publication year, you can see the newer - up and coming - journals. However, if we change the visualization to use the average normalized citation, we can see what journal is most popular (avoiding the word impact as popular does not give an opinion on quality) with our specific search terms.</p>
+<p>For example, we can see that the <em>Journal of industrial ecology</em> is quite average in number of citations at 0.97. The Russian journal that also had a big output has 0.08 as avg. norm. citation. <em>Resources, Conservation and Recycling</em> in the same cluster as the ‘Journal of industrial ecology’ scores a 2.04, which means it is a little more popular if it fits your specific research. (In the image blue means a low number of average citations, while yellow is a high number of average citations.)</p>
+<div class="figure">
+<img src="./_bookdown_files/bookdown-demo_files/png/vosviewer-citations.png" alt="" />
+<p class="caption">img</p>
+</div>
+<p>The size of each circle gives the number of articles within our set that has been published in said journal. The larger the circle, the more the journal focuses on this type of research (which means you have a bigger chance of publishing there).</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Of course we encourage you not to look only at this analysis. Check out the website of the journal and its focus. And check out the possibilities for Open Access you have at the journal via <a href="https://library.wur.nl/WebQuery/ulbrowser?wq_fld=title&amp;wq_val=*">Journal Browser</a></li>
+</ol>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="howto-papers2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Analyses.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
